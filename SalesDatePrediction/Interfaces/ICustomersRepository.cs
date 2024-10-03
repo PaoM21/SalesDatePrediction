@@ -1,9 +1,9 @@
-﻿using SalesDatePrediction.Models;
+﻿using SalesDatePrediction.Dto;
 
 namespace SalesDatePrediction.Interfaces
 {
     public interface ICustomersRepository
     {
-        IEnumerable<OrderPrediction> GetCustomerOrderPredictions();
+        IEnumerable<OrderPredictionDto> GetCustomerOrderPredictions();
     }
 }
