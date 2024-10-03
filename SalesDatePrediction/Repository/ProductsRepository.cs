@@ -16,5 +16,10 @@ namespace SalesDatePrediction.Repository
         {
             return _context.Products.OrderBy(pr => pr.ProductId).ToList();
         }
+
+        public bool ProductExists(int productId)
+        {
+            return _context.Products.Any(or => or.ProductId == productId);
+        }
     }
 }
