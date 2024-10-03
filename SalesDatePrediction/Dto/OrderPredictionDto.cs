@@ -1,6 +1,6 @@
-﻿namespace SalesDatePrediction.Models
+﻿namespace SalesDatePrediction.Dto
 {
-    public class OrderPrediction
+    public class OrderPredictionDto
     {
         public string CompanyName { get; set; }
         public DateTime LastOrderDate { get; set; }
