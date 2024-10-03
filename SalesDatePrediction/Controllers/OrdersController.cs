@@ -63,7 +63,7 @@ namespace SalesDatePrediction.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return Ok("Successfully created, OrderId" + OrderCreated);
+            return Ok("Successfully created, orden con Id " + OrderCreated);
         }
     }
 }
