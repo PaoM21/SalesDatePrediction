@@ -23,7 +23,6 @@ namespace SalesDatePrediction.Controllers
         [ProducesResponseType(200, Type = typeof(IEnumerable<OrderPredictionDto>))]
         public IActionResult GetCustomerOrderPredictions()
         {
-            //var pokemons = _mappker.Map<List<OrderPrediction>>(_pokemonRepository.GetPokemons());
             var orderPredictions = _customersRepository.GetCustomerOrderPredictions();
 
             if (!ModelState.IsValid)

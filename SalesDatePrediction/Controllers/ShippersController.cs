@@ -23,7 +23,6 @@ namespace SalesDatePrediction.Controllers
         [ProducesResponseType(200, Type = typeof(IEnumerable<Shippers>))]
         public IActionResult GetShippers()
         {
-            //var pokemons = _mapper.Map<List<PokemonDto>>(_pokemonRepository.GetPokemons());
             var shippers = _shippersRepository.GetShippers();
 
             if (!ModelState.IsValid)
