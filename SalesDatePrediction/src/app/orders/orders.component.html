@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Órdenes</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID de Orden</th>
+        <th>ID de Cliente</th>
+        <th>ID de Empleado</th>
+        <th>Fecha de Orden</th>
+        <th>Nombre del Envío</th>
+        <th>Ciudad de Envío</th>
+        <th>Freight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.custId }}</td>
+        <td>{{ order.empId }}</td>
+        <td>{{ order.orderDate | date: 'shortDate' }}</td>
+        <td>{{ order.shipName }}</td>
+        <td>{{ order.shipCity }}</td>
+        <td>{{ order.freight }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Crear Nueva Orden</h2>
+  <form (ngSubmit)="createOrder()">
+    <input type="number" [(ngModel)]="newOrder.empId" name="empId" placeholder="ID de Empleado" required>
+    <input type="text" [(ngModel)]="newOrder.shipName" name="shipName" placeholder="Nombre del Envío" required>
+    <input type="text" [(ngModel)]="newOrder.shipCity" name="shipCity" placeholder="Ciudad de Envío" required>
+    <input type="date" [(ngModel)]="newOrder.orderDate" name="orderDate" placeholder="Fecha de Orden" required>
+    <input type="date" [(ngModel)]="newOrder.requiredDate" name="requiredDate" placeholder="Fecha Requerida" required>
+    <input type="number" [(ngModel)]="newOrder.freight" name="freight" placeholder="Freight" required>
+    <button type="submit">Crear Orden</button>
+  </form>
+</div>

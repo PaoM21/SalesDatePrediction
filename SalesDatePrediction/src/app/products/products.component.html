@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Lista de Productos</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre del Producto</th>
+        <th>ID del Proveedor</th>
+        <th>ID de Categoría</th>
+        <th>Precio Unitario</th>
+        <th>Descontinuado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.productId }}</td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.supplierId }}</td>
+        <td>{{ product.categoryId }}</td>
+        <td>{{ product.unitPrice }}</td>
+        <td>{{ product.discontinued }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

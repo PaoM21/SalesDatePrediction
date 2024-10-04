@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Predicciones de Pedidos de Clientes</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre de la Empresa</th>
+        <th>Última Fecha de Pedido</th>
+        <th>Próximo Pedido Previsto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prediction of orderPredictions">
+        <td>{{ prediction.companyName }}</td>
+        <td>{{ prediction.lastOrderDate | date: 'shortDate' }}</td>
+        <td>{{ prediction.nextPredictedOrder | date: 'shortDate' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
