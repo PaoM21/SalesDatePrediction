@@ -33,7 +33,6 @@ namespace SalesDatePrediction.Controllers
             if (!_ordersRepository.CustomerExists(custId))
                 return NotFound();
 
-            //var pokemon = _mapper.Map<PokemonDto>(_pokemonRepository.GetPokemon(orderName));
             var ordersByCustom = _ordersRepository.GetOrdersByCustom(custId);
 
             if (!ModelState.IsValid)
@@ -53,9 +52,7 @@ namespace SalesDatePrediction.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            //var pokemonMap = _mapper.Map<Pokemon>(orderCreate);
-            var orderMap = orderProduct;
-            var OrderCreated = _ordersRepository.CreateOrderWithProduct(orderMap);
+            var OrderCreated = _ordersRepository.CreateOrderWithProduct(orderProduct);
 
             if (OrderCreated == null || OrderCreated == default(int))
             {
